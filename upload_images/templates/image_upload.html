@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<header>
+<style type='text/css'>
+body {
+    font: 14px sans-serif;
+    color: darkslateblue;
+    border: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+<p><a href="/">Назад к Списку</a></p>
+
+<p><h1>Новое Изображение</h1></p>
+
+</header>
+<body>
+<form  method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+   {{ form.as_p }}
+  <button  type="submit" >Upload</button>
+</form>
+
+{% if img_obj %}
+  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+  <img src="{{ img_obj.image.url}}" width="{{img_obj.width}}" height="{{img_obj.height}}" alt="connect" style="max-height:300px">
+{% endif %}
+</body>
+
+</html>

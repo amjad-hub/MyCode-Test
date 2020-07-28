@@ -1,0 +1,26 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<header>
+<style type='text/css'>
+body {
+    font: 14px sans-serif;
+    color: darkslateblue;
+    border: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+</header>
+<body>
+
+<p><a href="/">Назад к Списку</a></p>
+<h3>Image Title : {{img_obj.title}}</h3>
+<img src="{{ img_obj.image.url}}"  width="{{img_obj.width}}" height="{{img_obj.height}}" alt="connect" style="max-height:300px">
+
+</body>
+
+</html>
+

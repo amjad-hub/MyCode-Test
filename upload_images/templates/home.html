@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<header>
+<style type='text/css'>
+body {
+    font: 14px sans-serif;
+    color: darkslateblue;
+    border: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+<h1>Список изображений</h1>
+</header>
+
+<body>
+    {% if var < 1 %}
+        <p> Нет доступных изображений</p>
+    {% endif %}
+    <p><a href="/upload/">Добавить изображений</a></p>
+      
+      <p>
+         {% for image in image_list %}
+          <p><a href="{{image.get_absolute_url}}">{{image.title}}</a></p>
+      </p>
+      {% endfor %}
+
+</body>
+
+</html>
